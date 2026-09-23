@@ -5,61 +5,34 @@
 }
 
 :root {
-  --background-color: #000509;
+  --black-color: #000509;
   --yellow-color: #F0DB4F;
   --white-color: #EDF4FA;
   --gray-color: #1E252B;
-  --normal-fonts: Arial, sans-serif;
+  --main-fonts: Arial, sans-serif;
   --code-fonts: 'Courier New', monospace;
 }
 
 body{
-    background-color: var(--background-color);
+    background-color: var(--black-color);
     color: var(--white-color);
-    font-family: var(--normal-fonts);
+    font-family: var(--main-fonts);
     height: 100vh;
 }
 
-code{
-    font-family: var(--code-fonts);
-}
-
-#wrapper-1{
-    display: flex;
-    gap: 10px;
-}
-
 img{
-    border-radius: 4px;
-}
-
-ul{
-    list-style: none;
-}
-
-a{
-    text-decoration: none;
-    color: var(--white-color);
+    border-radius: 0.25rem;
 }
 
 #logo{
-    max-width: 40px;
+    max-width: 2.5rem;
 }
 
 header{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-bottom: 1.5px solid #1E252B;
-    padding: 20px;
-}
-
-.nav-links{
-    display: flex;
-    min-width: 200px;
-    justify-content: space-around;
-}
-
-.nav-link:hover{
-    border-bottom: 2px dotted var(--yellow-color);    
+    justify-content: center;
+    gap: 0.5rem;
+    border-bottom: 1.5px solid var(--gray-color);
+    padding: 1rem;
 }
