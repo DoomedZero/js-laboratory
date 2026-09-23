@@ -6,7 +6,6 @@
 
 :root {
   --background-color: #000509;
-  --green-color: #0FBF3E;
   --yellow-color: #F0DB4F;
   --white-color: #EDF4FA;
   --gray-color: #1E252B;
@@ -31,8 +30,20 @@ code{
 }
 
 img{
-    max-width: 40px;
     border-radius: 4px;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+#logo{
+    max-width: 40px;
 }
 
 header{
@@ -43,18 +54,12 @@ header{
     padding: 20px;
 }
 
-ul{
+.nav-links{
     display: flex;
     min-width: 200px;
     justify-content: space-around;
-    list-style: none;
 }
 
-a{
-    text-decoration: none;
-    color: var(--white-color);
-}
-
-a:hover{
+.nav-link:hover{
     border-bottom: 2px dotted var(--yellow-color);    
 }
