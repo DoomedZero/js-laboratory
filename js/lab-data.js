@@ -1,6 +1,22 @@
 // lab-data.js
 export const snippets = [
     {
+        id: "overview",
+        title: "Playground Overview",
+        category: "Getting Started",
+        type: "note", // Flags that this is an overview, not an exercise
+        prompt: "Personal vanilla JavaScript workshop tracking practical implementations, algorithmic utilities, and native browser APIs without frameworks.",
+        code: `// Current focus
+const focus = "Asynchronous JavaScript & Fetch API";
+
+const milestones = [
+  { topic: "DOM & Events", status: "in-progress" },
+  { topic: "Async & Fetch", status: "upcoming" },
+  { topic: "State & Architecture", status: "upcoming" }
+];`,
+        output: "Select an exercise from the sidebar to inspect the implementation."
+    },
+    {
         id: "unique-elements",
         title: "Extract Unique Elements from Array",
         category: "Array Methods",
