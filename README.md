@@ -20,10 +20,11 @@ A lightweight, zero-framework vanilla JavaScript workspace and interactive lab d
 ```text
 ├── index.html            # Main dashboard, roadmap matrix, and project grid
 ├── lab.html              # MDN-style split-pane documentation & exercise viewer
-├── style.css             # Unified dark design system and responsive layouts
+├── css/
+│   ├──global.css         # Unified dark design system and responsive layouts
 ├── js/
 │   ├── lab-data.js       # Central data array for all exercises & snippets
 │   └── render.js         # Dynamic router, search filtering, & DOM injector
-└── projects/             # Standalone mini-apps & full implementations
-    ├── calculator/
-    └── <project-slug>/
+├── projects/             # Standalone mini-apps & full implementations
+├── README.md             # This File!!
+└── jslogo.jepg           # That cool fav-icon for website
