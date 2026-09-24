@@ -4,6 +4,30 @@ const navContainer = document.getElementById('sidebar-nav');
 const contentContainer = document.getElementById('active-snippet-container');
 const searchInput = document.getElementById('search-input');
 
+// --- MDN Drawer Controller ---
+const drawerToggle = document.getElementById('drawer-toggle');
+const drawerClose = document.getElementById('drawer-close');
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('sidebar-overlay');
+const subbarTopic = document.getElementById('subbar-topic-label');
+
+function setDrawerOpen(isOpen) {
+    sidebar.classList.toggle('open', isOpen);
+    overlay.classList.toggle('active', isOpen);
+}
+
+if (drawerToggle) {
+    drawerToggle.addEventListener('click', () => setDrawerOpen(true));
+}
+
+if (drawerClose) {
+    drawerClose.addEventListener('click', () => setDrawerOpen(false));
+}
+
+if (overlay) {
+    overlay.addEventListener('click', () => setDrawerOpen(false));
+}
+
 function escapeHtml(str) {
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
@@ -55,6 +79,11 @@ function renderActiveSnippet() {
     if (!activeSnippet) {
         contentContainer.innerHTML = `<p>No snippet selected or found.</p>`;
         return;
+    }
+
+    // Auto-close drawer if screen is <= 800px
+    if (window.innerWidth <= 800) {
+        setDrawerOpen(false);
     }
 
     // Sync the URL hash on initial visit if it was empty
