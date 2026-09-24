@@ -5,16 +5,18 @@ export const snippets = [
         title: "Playground Overview",
         category: "Getting Started",
         type: "note", // Flags that this is an overview, not an exercise
-        prompt: "Personal vanilla JavaScript workshop tracking practical implementations, algorithmic utilities, and native browser APIs without frameworks.",
+        prompt: `Personal vanilla JavaScript workshop tracking practical implementations, algorithmic utilities, and native browser APIs without frameworks.`,
         code: `// Current focus
 const focus = "Asynchronous JavaScript & Fetch API";
 
+//Miletones
 const milestones = [
   { topic: "DOM & Events", status: "in-progress" },
   { topic: "Async & Fetch", status: "upcoming" },
-  { topic: "State & Architecture", status: "upcoming" }
+  { topic: "State & Architecture", status: "upcoming" },
+  { topic: "React Framework", status: "upcoming"}
 ];`,
-        output: "Select an exercise from the sidebar to inspect the implementation."
+        output: "Select a topic from the sidebar to inspect the implementation."
     },
     {
         id: "unique-elements",
@@ -35,17 +37,6 @@ console.log(unique);`,
         title: "Double Numbers with map()",
         category: "Array Methods",
         difficulty: "Beginner",
-        prompt: "Multiply every number in an array by 2.",
-        code: `const nums = [1, 2, 3];
-const doubled = nums.map(n => n * 2);
-console.log(doubled);`,
-        output: "[2, 4, 6]"
-    },
-    {
-        id: "manipulating-data-with-js",
-        title: "Manipulating data with manup()",
-        category: "Data Manipulation",
-        difficulty: "Intermediate",
         prompt: "Multiply every number in an array by 2.",
         code: `const nums = [1, 2, 3];
 const doubled = nums.map(n => n * 2);
