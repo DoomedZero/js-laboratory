@@ -257,3 +257,168 @@ button, input {
     font-size: 0.85rem;
     color: #c9d1d9;
 }
+
+/* --- MDN Sub-bar & Close Button: Hidden on Desktop (> 800px) --- */
+.mobile-subbar {
+    display: none;
+}
+
+.sidebar-title-row {
+    display: none;
+}
+
+.sidebar-overlay {
+    display: none;
+}
+
+/* ==========================================================
+   MDN DRAWER BREAKPOINT (<= 800px)
+   ========================================================== */
+@media (max-width: 800px) {
+
+    /* 1. Unfreeze window scroll on mobile so articles flow naturally */
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+
+    /* 2. MDN Breadcrumb / Sub-bar */
+    .mobile-subbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 44px;
+        padding: 0 1.25rem;
+        background-color: #161b22;
+        border-bottom: 1px solid var(--border-color);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+
+    .subbar-toggle-btn {
+        background: transparent;
+        border: 1px solid var(--border-color);
+        color: #f0f6fc;
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+    }
+
+    .subbar-toggle-btn:hover {
+        background-color: #21262d;
+    }
+
+    .subbar-current-topic {
+        font-size: 0.82rem;
+        color: #8b949e;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 55%;
+    }
+
+    /* 3. The Layout collapses from flex two-column to single block */
+    .layout {
+        border-left: none;
+        border-right: none;
+        height: auto;
+        min-height: calc(100vh - 104px); /* 100vh minus header (60px) + subbar (44px) */
+        display: block;
+    }
+
+    /* 4. Sidebar becomes an MDN Drawer */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 310px;
+        max-width: 85vw;
+        background-color: #161b22;
+        border-right: 1px solid var(--border-color);
+        z-index: 1000;
+        transform: translateX(-100%); /* Stowed away off-screen */
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.7);
+    }
+
+    .sidebar.open {
+        transform: translateX(0); /* Slide into view */
+    }
+
+    /* Drawer Header with Title & ✕ Button */
+    .sidebar-title-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.75rem;
+    }
+
+    .sidebar-heading {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #f0f6fc;
+    }
+
+    .drawer-close-btn {
+        background: transparent;
+        border: none;
+        color: #8b949e;
+        font-size: 1.1rem;
+        cursor: pointer;
+        padding: 4px;
+        border-radius: 4px;
+        line-height: 1;
+    }
+
+    .drawer-close-btn:hover {
+        color: #f0f6fc;
+        background-color: #21262d;
+    }
+
+    /* 5. Backdrop Dimming */
+    .sidebar-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(2px);
+        z-index: 999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+    }
+
+    .sidebar-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* 6. Content View inside Mobile Viewport */
+    .content-view {
+        padding: 1.75rem 1.25rem 3rem 1.25rem;
+        overflow-y: visible;
+        height: auto;
+    }
+
+    .snippet-title {
+        font-size: 1.6rem;
+    }
+
+    .code-wrapper pre {
+        overflow-x: auto; /* Swipable code lines */
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.86rem !important;
+    }
+
+    .output-box {
+        overflow-x: auto;
+    }
+}

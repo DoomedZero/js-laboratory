@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Laboratory</title>
+    <title>jsPlayground</title>
     <link rel="icon" type="image/x-icon" href="jslogo.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
 
     <header class="site-header">
         <nav class="site-nav">
-            <!-- Brand: JS Square + Name -->
+            <!-- Brand -->
             <a href="index.html" class="brand">
                 <div class="js-badge" aria-hidden="true">JS</div>
                 <span class="brand-name">laboratory</span>
@@ -35,16 +35,34 @@
         </nav>
     </header>
 
+    <!-- MDN-Style Mobile Sub-Bar -->
+    <div class="mobile-subbar">
+        <button class="subbar-toggle-btn" id="drawer-toggle">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <path fill-rule="evenodd" d="M2.5 12a.75.75 0 0 1 .75-.75h9.5a.75.75 0 0 1 0 1.5h-9.5A.75.75 0 0 1 2.5 12zm0-4.5a.75.75 0 0 1 .75-.75h9.5a.75.75 0 0 1 0 1.5h-9.5A.75.75 0 0 1 2.5 7.5zm0-4.5a.75.75 0 0 1 .75-.75h9.5a.75.75 0 0 1 0 1.5h-9.5A.75.75 0 0 1 2.5 3z"></path>
+            </svg>
+            <span>Menu & Topics</span>
+        </button>
+        <span class="subbar-current-topic" id="subbar-topic-label">Overview</span>
+    </div>
+
+    <!-- Mobile Drawer Backdrop -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
     <div class="layout">
-        <!-- Sidebar -->
-        <aside class="sidebar">
+        <!-- Sidebar (Desktop Fixed Sidebar / Mobile Off-canvas Drawer) -->
+        <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
+                <div class="sidebar-title-row">
+                    <span class="sidebar-heading">Navigation</span>
+                    <button class="drawer-close-btn" id="drawer-close" aria-label="Close menu">✕</button>
+                </div>
                 <input type="text" id="search-input" placeholder="Search exercises..." autocomplete="off">
             </div>
             <nav id="sidebar-nav" class="nav-tree"></nav>
         </aside>
 
-        <!-- Main Content Reader (Blends directly with the background, zero card styling) -->
+        <!-- Main Content Reader -->
         <main class="content-view">
             <div id="active-snippet-container"></div>
         </main>
