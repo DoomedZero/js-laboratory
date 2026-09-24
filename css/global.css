@@ -53,22 +53,6 @@ input {
     align-items: center;
     gap: 0.75rem;
     text-decoration: none;
-    color: inherit;
-}
-
-.js-badge {
-    width: 2.25rem;
-    height: 2.25rem;
-    background-color: #f7df1e;
-    color: #000;
-    border-radius: 0.25rem;
-    font-weight: 800;
-    font-size: 1.05rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding: 0 3px 1px 0;
-    user-select: none;
 }
 
 .brand-name {
@@ -251,7 +235,7 @@ input {
     margin: 0 !important;
     background: #161b22 !important;
     padding: 1.25rem !important;
-    padding-top: 2.25rem !important;        /* Extra top padding so wrapped code doesn't collide with the copy button */
+    /* padding-top: 2.25rem !important;        Extra top padding so wrapped code doesn't collide with the copy button */
     font-size: 0.9rem !important;
     line-height: 1.6 !important;
 }
