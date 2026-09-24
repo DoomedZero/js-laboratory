@@ -426,3 +426,44 @@ input {
         overflow-x: auto;
     }
 }
+
+/* --- Code Block Container with Max-Width --- */
+.code-wrapper {
+    position: relative;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    max-width: 100%; /* Matches container boundary */
+}
+
+/* --- MDN-Style Soft Wrap for Code --- */
+.code-wrapper pre,
+.code-wrapper pre code {
+    white-space: pre-wrap !important;       /* Preserves indentation but wraps when hitting the edge */
+    word-break: break-word !important;      /* Breaks long variable names or URLs cleanly */
+    overflow-wrap: break-word !important;
+}
+
+.code-wrapper pre {
+    margin: 0 !important;
+    background: #161b22 !important;
+    padding: 1.25rem !important;
+    padding-top: 2.25rem !important;        /* Extra top padding so wrapped code doesn't collide with the copy button */
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+}
+
+/* --- Terminal / Output Box with Same Wrap Behavior --- */
+.output-box {
+    background: #161b22;
+    border: 1px solid var(--border-color);
+    border-left: 3px solid #58a6ff;
+    border-radius: 4px;
+    padding: 0.85rem 1rem;
+    font-family: monospace;
+    font-size: 0.88rem;
+    color: #c9d1d9;
+    white-space: pre-wrap;                   /* Wraps long arrays/objects to the next line */
+    word-break: break-word;
+}

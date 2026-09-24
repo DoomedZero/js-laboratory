@@ -102,9 +102,7 @@ function renderActiveSnippet() {
         <pre><code class="language-javascript">${escapeHtml(activeSnippet.code)}</code></pre>
       </div>
 
-      <div class="output-box">
-        <strong>Expected Output:</strong> ${activeSnippet.output}
-      </div>
+      <div class="output-box"><strong>Expected Output:</strong> ${activeSnippet.output}</div>
     </article>
   `;
 
