@@ -18,8 +18,7 @@ A lightweight, zero-framework vanilla JavaScript workspace and interactive lab d
 ## 📂 Repository Layout
 
 ```text
-├── index.html            # Main dashboard, roadmap matrix, and project grid
-├── lab.html              # MDN-style split-pane documentation & exercise viewer
+├── index.html            # Main page, with overview, exercises and everything...
 ├── css/
 │   ├──global.css         # Unified dark design system and responsive layouts
 ├── js/
