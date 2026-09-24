@@ -26,4 +26,4 @@ A lightweight, zero-framework vanilla JavaScript workspace and interactive lab d
 │   └── render.js         # Dynamic router, search filtering, & DOM injector
 ├── projects/             # Standalone mini-apps & full implementations
 ├── README.md             # This File!!
-└── jslogo.jepg           # That cool fav-icon for website
+└── js-logo.svg           # That cool fav-icon for website and brand-logo
