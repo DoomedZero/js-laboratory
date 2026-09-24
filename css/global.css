@@ -204,40 +204,74 @@ input {
     margin-bottom: 1.5rem;
 }
 
+/* Header Bar: Language tag on left, Copy button on right */
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f242c;
+    border-bottom: 1px solid var(--border-color);
+    padding: 6px 12px;
+}
+
+.code-lang {
+    font-size: 0.76rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8b949e;
+    user-select: none;
+}
+
+/* Sleek Copy Button */
 .copy-btn {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: #21262d;
-    color: #c9d1d9;
-    border: 1px solid var(--border-color);
-    padding: 3px 8px;
+    background: transparent;
+    border: 1px solid transparent;
+    color: #8b949e;
+    padding: 4px 8px;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 0.72rem;
+    font-size: 0.78rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s ease;
 }
 
 .copy-btn:hover {
-    background: #30363d;
     color: #f0f6fc;
+    background-color: #2b313a;
+    border-color: var(--border-color);
 }
 
-/* Code Snippet Card */
+.copy-btn.copied {
+    color: #3fb950;
+    border-color: rgba(63, 185, 80, 0.4);
+}
+
+/* --- MDN Code Block Shell --- */
 .code-wrapper {
-    position: relative;
-    border-radius: 6px;
+    border-radius: 8px;
     border: 1px solid var(--border-color);
     overflow: hidden;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    background-color: #161b22;
 }
 
+/* Code Content Area */
 .code-wrapper pre {
     margin: 0 !important;
     background: #161b22 !important;
-    padding: 1.25rem !important;
-    /* padding-top: 2.25rem !important;        Extra top padding so wrapped code doesn't collide with the copy button */
+    padding: 1rem 1.25rem !important; /* Clean uniform padding, no artificial top space needed */
     font-size: 0.9rem !important;
     line-height: 1.6 !important;
+}
+
+.code-wrapper pre,
+.code-wrapper pre code {
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
 }
 
 /* --- Terminal / Output Box with Same Wrap Behavior --- */
@@ -252,14 +286,6 @@ input {
     color: #c9d1d9;
     white-space: pre-wrap;                   /* Wraps long arrays/objects to the next line */
     word-break: break-word;
-}
-
-/* --- MDN-Style Soft Wrap for Code --- */
-.code-wrapper pre,
-.code-wrapper pre code {
-    white-space: pre-wrap !important;       /* Preserves indentation but wraps when hitting the edge */
-    word-break: break-word !important;      /* Breaks long variable names or URLs cleanly */
-    overflow-wrap: break-word !important;
 }
 
 /* --- MDN Sub-bar & Close Button: Hidden on Desktop (> 800px) --- */

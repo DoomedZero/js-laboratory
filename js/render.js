@@ -92,29 +92,47 @@ function renderActiveSnippet() {
     }
 
     contentContainer.innerHTML = `
-    <article>
-      <span class="badge">${activeSnippet.category}</span>
-      <h1 class="snippet-title">${activeSnippet.title}</h1>
-      <p class="snippet-prompt">${activeSnippet.prompt}</p>
+  <article>
+    <span class="badge">${activeSnippet.category}</span>
+    <h1 class="snippet-title">${activeSnippet.title}</h1>
+    <p class="snippet-prompt">${activeSnippet.prompt}</p>
 
-      <div class="code-wrapper">
-        <button class="copy-btn" id="copy-btn">Copy</button>
-        <pre><code class="language-javascript">${escapeHtml(activeSnippet.code)}</code></pre>
+    <!-- MDN-Style Structured Code Block -->
+    <div class="code-wrapper">
+      <div class="code-header">
+        <span class="code-lang">JavaScript</span>
+        <button class="copy-btn" id="copy-btn">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+            <path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25v-7.5z"></path>
+            <path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25v-7.5zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-7.5z"></path>
+          </svg>
+          <span class="copy-label">Copy</span>
+        </button>
       </div>
+      <pre><code class="language-javascript">${escapeHtml(activeSnippet.code)}</code></pre>
+    </div>
 
-      <div class="output-box"><strong>Expected Output:</strong> ${activeSnippet.output}</div>
-    </article>
-  `;
+    <div class="output-box"><strong>Expected Output:</strong> ${escapeHtml(activeSnippet.output)}</div>
+  </article>
+`;
 
     Prism.highlightAll();
 
     // Attach copy handler
     const copyBtn = document.getElementById('copy-btn');
-    copyBtn.addEventListener('click', async () => {
-        await navigator.clipboard.writeText(activeSnippet.code);
-        copyBtn.textContent = 'Copied!';
-        setTimeout(() => (copyBtn.textContent = 'Copy'), 1500);
-    });
+    if (copyBtn) {
+        copyBtn.addEventListener('click', async () => {
+            await navigator.clipboard.writeText(activeSnippet.code);
+            const label = copyBtn.querySelector('.copy-label');
+            label.textContent = 'Copied!';
+            copyBtn.classList.add('copied');
+
+            setTimeout(() => {
+                label.textContent = 'Copy';
+                copyBtn.classList.remove('copied');
+            }, 1500);
+        });
+    }
 
     // Update active state in sidebar without re-rendering the whole tree
     document.querySelectorAll('.nav-item').forEach(el => {
