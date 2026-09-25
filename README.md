@@ -1,8 +1,8 @@
-# ⚡ JavaScript Playground
+# ⚡ JavaScript Laboratory
 
-A lightweight, zero-framework vanilla JavaScript workspace and interactive lab documenting my learning progression from core DOM operations to full-stack engineering.
+A Javascript Joureny Documentation (JJD) and Code Consistency Experiment(CCE) solely planned by me and created as AI-slop, WHICH I PROMISE TO UNDERSTAND AND TRANSFORM AS I LEARN. 
 
-🔗 **Live Demo:** [https://<your-username>.github.io/<repo-name>](https://<your-username>.github.io/<repo-name>)
+🔗 **Live Demo:** [https://github.com/DoomedZero/js-laboratory](https://github.com/DoomedZero/js-laboratory)
 
 ---
 
@@ -11,7 +11,7 @@ A lightweight, zero-framework vanilla JavaScript workspace and interactive lab d
 - **Core:** Pure Semantic HTML5, Modern CSS (Flexbox & CSS Grid)
 - **Engine:** Vanilla ES6+ JavaScript (ES Modules, Hash Routing, Fetch, Clipboard API)
 - **Syntax Highlighting:** [Prism.js](https://prismjs.com/) (Tomorrow Night theme)
-- **Deployment:** GitHub Pages (Static hosting)
+- **Deployment:** GitHub Pages (Static hosting) (Will deploy in October, 2026)
 
 ---
 
