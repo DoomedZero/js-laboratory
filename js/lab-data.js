@@ -2,10 +2,10 @@
 export const snippets = [
     {
         id: "overview",
-        title: "Playground Overview",
-        category: "Getting Started",
+        title: "Laboratory Overview",
+        category: "Overview",
         type: "note", // Flags that this is an overview, not an exercise
-        prompt: `Personal vanilla JavaScript workshop tracking practical implementations, algorithmic utilities, and native browser APIs without frameworks.`,
+        prompt: `A Javascript Joureny Documentation (JJD) and Code Consistency Experiment(CCE) solely planned by me and created as AI-slop, "Which I Promise to learn and transform as I learn."`,
         code: `// Current focus
 const focus = "Asynchronous JavaScript & Fetch API";
 
@@ -16,7 +16,7 @@ const milestones = [
   { topic: "State & Architecture", status: "upcoming" },
   { topic: "React Framework", status: "upcoming"}
 ];`,
-        output: "Select a topic from the sidebar to inspect the implementation."
+        output: "Select a topic from the sidebar to see the experiments."
     },
     {
         id: "unique-elements",
